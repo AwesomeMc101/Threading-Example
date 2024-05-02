@@ -13,11 +13,17 @@ struct args {
 void thread_add(LPVOID input) {
     args arguments = *(static_cast<args*>(input));
     
-    /*
+    /* ^^^^
     Cast your input args (LPVOID just as pointer) to a args* pointer
-    and dereference it in the same line. In C, this is done as:
+    and dereference it in the same line. 
 
+    In multiple lines, you can imagine it like this:
+    args* args_ptr = static_cast<args*>(input);
+    args arguments = *args_ptr;
+    
+    In C (aka using C-style type casting), this is done as:
     args arguments = *((args*)input);
+    
     */
 
     float ans = (arguments.a + arguments.b); //add up the struct's values of a & b
